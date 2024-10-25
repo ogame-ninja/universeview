@@ -108,13 +108,25 @@ li.selected .UvUpdateOption{ display: block; }
 .UvExtraButton{ background: url(chrome-extension://__MSG_@@extension_id__/chrome/content/img/buttons-blue.gif) no-repeat; width: 176px; height: 27px; float: right; margin: -2px; cursor: pointer; color: #FFF; font-weight: bold; }
 .UvExtraButton:hover{ background-position: 0px -27px;	 color: #000; }
 .UvExtraButton:disabled{ background: url(chrome-extension://__MSG_@@extension_id__/chrome/content/img/buttons-blue.gif) no-repeat !important; color: #999 !important; }
-#UvHelpButtons{ margin:	20px 0 10px 0; }
-#UvHelpButtons > div { float: left; }
+#UvHelpButtons{ margin:	20px 0 0 0; display: flex; flex-flow: row wrap; align-items: center; justify-content: center; }
+#UvHelpButtons > div { width: 30%; }
 .UvHelpButton{ background: url(chrome-extension://__MSG_@@extension_id__/chrome/content/img/buttons-blue.gif) no-repeat; width: 176px; height: 27px; cursor: pointer; color: #FFF; font-weight: bold; margin: 4px; }
 .UvHelpButton:hover{ background-position: 0px -27px; color: #000; }
 #paypal{ width: 176px; margin: 4px; text-align: center; }
 #UvContent .c-left { top: auto; bottom: -4px; left: -9px; }
 #UvContent .c-right { top: auto; bottom: -4px; left: 641px; }
+
+/* Donate */
+.uv-menu-donate { display: flex; flex-flow: row wrap; align-items: flex-start; }
+.uv-menu-donate > div { display: flex; flex-flow: row wrap; align-items: flex-start; }
+.donate-cr { margin-right: 50px; }
+.donate-cr.active { width: 100%; margin-right: 0; }
+.donate-cr .donate-cr-icon { display: block; width: 60px; height: 60px; cursor: pointer; background: url(chrome-extension://__MSG_@@extension_id__/chrome/content/img/donate.png) no-repeat; background-size: 100%; }
+.donate-cr .donate-cr-table { display: none; }
+.donate-cr.active .donate-cr-table { display: grid; grid-template-columns: 1fr 2fr; gap: 5px; margin: 15px 0; }
+.donate-cr.active .donate-cr-table > div { padding: 5px 10px; background: rgba(33, 42, 51, 0.5); }
+.donate-cr.active .donate-cr-table > div:nth-child(-n + 2) { font-weight: bold; }
+
 
 /* Feature options */
 .feature-option-state-btn { display: inline-block; height: 25px; width: 25px; cursor: pointer; background: url(chrome-extension://__MSG_@@extension_id__/chrome/content/img/feature-buttons-small.png) no-repeat; background-position: center bottom; }
@@ -180,13 +192,13 @@ li.selected .UvUpdateOption{ display: block; }
 #UvFavs li:hover { background-color: #2f4656; cursor: pointer; }
 #UvFavs li:hover .uv-btn-fleet { display: block; }
 
-#galaxyContent .position { position: relative; }
-#galaxyContent .row .uv-btn-add { display: none; left: 0; top: 7px; right: auto; }
+#galaxyContent .cellPosition { position: relative; }
+#galaxyContent .galaxyRow .uv-btn-add { display: none; left: 0; top: 7px; right: auto; }
 #galaxyContent .UvFavSelected .uv-btn-add,
-#galaxyContent .row:hover .uv-btn-add { display: block; }
+#galaxyContent .galaxyRow:hover .uv-btn-add { display: block; }
 
 #uv-fleetpage-planets {  }
-#uv-fleetpage-planets ul { list-style: none; padding: 0; margin: 0; float: none !important; }
+#uv-fleetpage-planets ul { list-style: none; padding: 10px !important; margin: 0; float: none !important; }
 #uv-fleetpage-planets ul .uv-fleetpage-planet { display: inline-block; width: 33%; padding: 5px 2%; box-sizing: border-box; cursor: pointer; position: relative; word-wrap: break-word; }
 #uv-fleetpage-planets ul .uv-fleetpage-planet:hover { background-color: #364452; }
 #uv-fleetpage-planets .uv-fleetpage-coords { float: right; }
@@ -199,13 +211,13 @@ li.selected .UvUpdateOption{ display: block; }
 #uv-fleetpage-planets .uv-fleetpage-link-moon.exists { background-position: -25px -20px; }
 #uv-fleetpage-planets .uv-fleetpage-link-debris { background-position: -50px -20px; }
 #uv-fleetpage-planets ul .uv-fleetpage-planet:hover .uv-fleetpage-links { display: block; background-color: #364452; }
-.uv-galaxy-debris {  }
+.uv-galaxy-debris { background: none !important; }
 .uv-galaxy-debris img,
 .uv-galaxy-debris .debrisField { display: none; }
 .uv-galaxy-debris div { color: #fff; line-height: 1; }
 
 .uv-galaxy-expo-debris { float: right; line-height: 1; text-align: left; }
-.uv-galaxy-rank { text-decoration: none; }
+.uv-galaxy-rank { text-decoration: none; display: inline-block; padding-left: 5px; }
 .uv-highscore-vmode { opacity: 0.7; }
 .uv-highscore-player .playername { color: #eee; }
 .uv-highscore-inactive-short .playername { color: #848484; }
@@ -318,7 +330,7 @@ body.uv-feature-quicksearch #commandercomponent #characterclass a { display: blo
 .uv-raid-wrapper input { width: 30px; margin-left: 5px; padding: 0; }
 .uv-raid-wrapper a[data-extra-count]::after { content: attr(data-extra-count); display: inline-block; vertical-align: super; font-size: 0.8em; }
 .uv-raid-wrapper a[data-extra-count^="+0"]::after { display: none; }
-#uv_g_r_clock { float: right; width: 150px; }
+#uv_g_r_clock { padding: 4px; }
 #uv_g_r_clock.-legacy { position: absolute; top: 0; left: 260px; width: 150px; }
 .uv-simulate-trashsim { display: inline-block; height: 26px; padding-left: 26px; background: url(chrome-extension://__MSG_@@extension_id__/chrome/content/img/action-buttons.png) no-repeat top left; background-position: 0 -52px; }
 .uv-simulate-trashsim:hover { background-position: 0 -78px; border-color: #e7ae46; border-radius: 3px; }

@@ -1,19 +1,19 @@
 {
 "update_url": "https://clients2.google.com/service/update2/crx",
 
-	"name": "UniverseView Extension",
+	"name": "UniverseView Ninja Extension",
 	"short_name": "UniverseView",
-	"version": "4.1.4",
-	"version_name": "4.1.4",
+	"version": "4.2.1",
+	"version_name": "4.2.1",
 	"description": "UniverseView is a fast and fun OGame add-on. Find planets everywhere and make the way you play OGame more efficient and effective!",
 	"homepage_url": "https://universeview.be",
 	"manifest_version": 2,
 	"content_scripts": [
 		{
-			"include_globs": ["*://*/*"],
+			"include_globs": ["*://*.ogame.gameforge.com/game/index.php*", "*://*/bots/*/browser/html/*"],
 			"js": ["chrome/content/scripts/universeview.js"],
 			"css": ["chrome/content/css/stylesheet.css", "chrome/content/css/skin.css"],
-			"matches": ["*://*/*"],
+			"matches": ["*://*.ogame.gameforge.com/game/index.php*", "*://*/bots/*/browser/html/*"],
 			"run_at": "document_start"
 		}
 	],
@@ -28,7 +28,7 @@
 	"permissions": [
 		"unlimitedStorage",
 		"storage",
-		"*://*/*",
+		"<all_urls>",
 		"management",
 		"notifications",
 		"alarms",
